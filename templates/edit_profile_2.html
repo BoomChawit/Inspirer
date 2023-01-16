@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit profile
+{% endblock %}
+
+{% block main %}
+
+    
+    {% if session.user_id == users.user_id %}
+    
+        <br><br>
+        <div class = "mx-auto" style="width: 400px;">
+            <h1>Edit profile</h1>
+            <div>Expertise</div>
+        </div>
+        <br><br>
+        
+        <div class = "container">
+            <div class = "mx-auto" style="width: 400px;">
+                <form action="/profile/edit/expertise" method = "post">
+                   
+                    <h6>Your main topics</h6>
+                    <select class="custom-select"  name = "topic">
+                        <option selected> {{ users.topic }} </option>
+                        <option>Technology</option>
+                        <option>Study abroad</option>
+                        <option>Medicine</option>
+                    </select><br><br>
+                    
+                    <h6>Expertise</h6>
+                    <div class="form-group">
+                        <input class="form-control" name="expertise" placeholder = "expertise" type="text" value = "{{ users.expertise }}">
+                    </div>
+
+                    <h6>Name of school</h6>
+                    <div class="form-group">
+                        <input class="form-control " name="school" placeholder = "school" type="text" value = "{{ users.school }}">
+                    </div>
+                    
+                    <h6>Grade</h6>
+                    <select class="custom-select" id="inputGroupSelect01" name = "grade">
+                        <option selected> {{ users.grade }} </option>
+                        <option>High school</option>
+                        <option>Bachelor's degree</option>
+                        <option>Master's degree</option>
+                        <option>Ph.D</option>
+                    </select><br><br>
+                    
+                    <h6>Field of study</h6>
+                    <div class="form-group">
+                        <input class="form-control " name="field" placeholder = "Field of study..." type="text" value = "{{ users.field }}">
+                    </div><br>
+                    
+                    <h6>Current position</h6>
+                    <div class="form-group">
+                        <input class="form-control " name="position" placeholder = "Position" type="text" value = "{{ users.position }}">
+                        <br>
+                        <input class="form-control " name="company" placeholder = "Company" type="text" value = "{{ users.company }}">
+                    </div><br>
+                    
+                    <h6>Languague</h6>
+                    <select class="custom-select" id="inputGroupSelect01" name = "language">
+                        <option selected> {{ users.language }} </option>
+                        <option>English</option>
+                        <option>Thai</option>
+                        <option>Japanese</option>
+                    </select><br><br>
+                    
+                    <button class="btn btn-primary btn-lg btn-block"  style="width: 400px;" type="update"><div class ="small">Next</div></button>
+            
+                </form>
+                <br>
+                <a class="btn btn-dark btn-lg btn-block" href="/profile/edit/personal_info" role="button"><div class ="small">Back</div></a>
+                <br>
+                <a class="btn btn-success btn-lg btn-block" href="/profile/{{ users.firstname }}" role="button"><div class ="small">Finish</div></a>
+                <br><br>
+            </div>
+        </div>
+    
+    {% endif %}
+    
+{% endblock %}

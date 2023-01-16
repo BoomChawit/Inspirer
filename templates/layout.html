@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang = "eng">
+
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <title>Inspirer: {% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand font-weight-bold mt-auto" href="/">INSPIRER</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mt-auto">
+                    <li class="nav-item"><a class="nav-link" href="/speaker">Speakers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/event">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/guide">Guides</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blog">Blogs</a></li>
+                </ul>
+                <ul class="navbar-nav ml-auto mt-auto">
+                    {% if session.user_id %}
+                        <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
+                        <a class="btn btn-warning" href="/profile/{{ users.firstname }} " role="button" style="width: 100px;">Profile</a>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="/login">Log in</a></li>
+                        <a class="btn btn-warning" href="/register" role="button" style="width: 100px;">Register</a>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+        
+        {% block main %}{% endblock %}
+        
+        <br><br>
+
+        <footer class=" container-fluid  bg-light text-dark">
+            <hr><br><br>
+            <div class = "container">
+                <a class="text-dark font-weight-bold mt-auto" href="/" >INSPIRER</a><br><br>
+                <div class="row">
+                    <div class="col">
+                        <a class="text-muted" href="/speaker">Speakers</a><br>
+                        <a class="text-muted" href="/event">Events</a><br>
+                        <a class="text-muted" href="/guide">Guides</a><br>
+                        <a class="text-muted" href="/blog">Blogs</a><br>
+                    </div>
+                    <div class="col">
+                        <a class="text-muted" href="/about">About us</a><br>
+                        <a class="text-muted" href="/terms">Terms of use</a><br>
+                        <a class="text-muted" href="/policy">Privacy policy</a><br>
+                        <a class="text-muted" href="/contact">Contact</a><br>
+                    </div>
+                    <div class="col">
+                        <a class="text-muted" href="/speakers/motivation">Motivational speakers</a><br>
+                        <a class="text-muted" href="/speakers/leadership">Leadership speakers</a><br>
+                        <a class="text-muted" href="/speakers/business">Business speakers</a><br>
+                        <a class="text-muted" href="/speakers/inspiration">Inspirational speakers</a><br>
+                        <a class="text-muted" href="/speakers/keynote">Keynote speakers</a><br>
+                    </div>
+                    <div class="col small text-muted">
+                        <h6 class = "text-dark font-weight-bold">GET IN TOUCH!</h6>
+                        <p>Get in touch and lots of useful updates from us. We will once a week send you speaking tips</p>
+                        <form action="/subscribe" method="post">
+                            <div class="form-group">
+                                <input class="form-control" name="email" placeholder="Email" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="name" placeholder="Name" type="text">
+                            </div>
+                            <button class="btn btn-primary btn-small" type="submit">subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+        </footer>
+    </body>
+</html>

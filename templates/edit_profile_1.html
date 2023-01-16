@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit profile
+{% endblock %}
+
+{% block main %}
+
+    
+    
+    {% if session.user_id == users.user_id %}
+        
+        <br><br>
+        <div class = "mx-auto" style="width: 400px;">
+            <h1>Edit profile</h1>
+            <div>Personal information</div>
+        </div>
+        <br><br>
+        
+        <div class = "container">
+            <div class = "mx-auto" style="width: 400px;">
+                
+                <h6>Upload image</h6>
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="image" id="image">
+                        <label class="custom-file-label" for="image">Select image...</label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </form><br>
+
+                <form action="/profile/edit/personal_info" method="post">
+                
+                    
+                    <h6>First name</h6>
+                    <div class="form-group">
+                        <input class="form-control " name="firstname" value = "{{ users.firstname }}" type="text">
+                    </div><br>
+                    
+                    <h6>Last name</h6>
+                    <div class="form-group">
+                        <input class="form-control " name="lastname" value = "{{ users.lastname }}" type="text">
+                    </div><br>
+                    
+                    <h6>Country</h6>
+                    <div class="form-group">
+                        <input class="form-control " name="country" value = "{{ users.country }}" type="text">
+                    </div><br>
+                    
+                    <h6>City</h6>
+                    <div class="form-group">
+                        <input class="form-control " name="city" value = "{{ users.city }}" type="text">
+                    </div><br>
+                    
+                    <h6>Short bio (optional)</h6>
+                    <div class = "small text-muted">This pitch will boost your profile. People will be more interested in you, tell them about yourself</div><br>
+                    <div class="form-group">
+                        <textarea name="introduce" style = "width: 400px; height: 200px;"> </textarea>
+                    </div><br>
+                    
+                    <button class="btn btn-primary btn-lg btn-block" type="update"><div class ="small">Next</div></button>
+            
+                </form>
+                <br>
+                <a class="btn btn-success btn-lg btn-block" href="/profile/{{ users.firstname }}" role="button"><div class ="small">Finish</div></a>
+                <br><br>
+            </div>
+        </div>
+    
+    {% endif %}
+    
+{% endblock %}

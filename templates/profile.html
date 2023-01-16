@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ users.firstname }} {{ users.lastname }}
+{% endblock %}
+
+{% block main %}
+    <div class = "container">
+        <br><br>
+        <h1>Profile 
+        {% if session.user_id == users.user_id %}
+            <a class = "small" href="/profile/edit/personal_info">edit</a> 
+        {% endif %}
+        </h1>
+        <br><br>
+        
+        <div class = "row">
+            <div class = 'col-3'>
+                <div class="circular--landscape mid"><img src="{{ users.images }}" /></div><br><br>
+            </div>
+            <div class = 'col-5'>
+                <h1>{{ users.firstname }} {{ users.lastname }}</h1>
+                <h4>{{ users.position }} {{ users.company}} </h4>
+                {{ users.grade }}, {{ users.school }}
+                <br><br><br>
+                
+                <div class = "row">
+                    <div class = 'col-4' style = "font-weight: bold;">TOPIC</div>
+                    <div class = 'col'>{{ users.topic }}</div>
+                </div>
+                <div class = "row">
+                    <div class = 'col-4' style = "font-weight: bold;">EXPERTISE</div>
+                    <div class = 'col'>{{ users.expertise }}</div>
+                </div>
+
+            </div>
+            <div class = "col-4">
+                <div class = "row">
+                    <div class = "col">
+                        <div style = "font-weight: bolder">country</div>
+                    </div>
+                    <div class = "col">
+                        {{ users.country}}
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col">
+                        <div style = "font-weight: bolder">city</div>
+                    </div>
+                    <div class = "col">
+                        {{ users.city}}
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col">
+                        <div style = "font-weight: bolder">language</div>
+                    </div>
+                    <div class = "col">
+                        {{ users.language }}
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col">
+                        <div style = "font-weight: bolder">fee</div>
+                    </div>
+                    <div class = "col">
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-warning" href = "/contact" style = "width: 300px;">Contact <b style = "text-transform:uppercase;">{{ users.firstname }}</b></button>
+            </div>
+        </div>
+        <br><br>
+        
+        
+    </div>
+    
+{% endblock %}

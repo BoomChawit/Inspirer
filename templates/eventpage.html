@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    event: {{event["event"]}}
+{% endblock %}
+
+{% block main%}
+   <div class="container text-dark">
+       <br><br>
+       <h1>Event Information</h1>
+       <br><br>
+
+       <div class='row'>
+           <div class='col-8'>
+        <h2>{{ event["event"] }}</h2>
+               <h4>{{event.category}}</h4>
+               <br>
+               <h7>{{event.intro}}</h7>
+
+               <br><br><br>
+               <div class='row'>
+                   <div class='col-4' style="font-weight:bolder">
+                        <h7>Speaker</h7><br>
+                        <h7>Date of event</h7><br>
+                        <h7>Audience size</h7><br>
+                   </div>
+                   <div class='col'>
+                       <h7>{{speaker.firstname}} {{speaker.lastname}}</h7><br>
+                       <h7>{{event.date}} {{event.month}} {{event.year}}</h7><br>
+                       <h7>{{event.size}}</h7><br>
+                   </div>
+               </div>
+           </div>
+           <div class='col-4'>
+                <div class="circular--landscape mid"><img src="{{ event.images }}" /></div><br><br>
+                <div class='row'>
+                   <div class='col' style='font-weight:bolder'>
+                       <p>City</p>
+                       <p>Country</p>
+                       <p>Region</p>
+                   </div>
+                   <div class='col'>
+                       <p>{{event.city}}</p>
+                       <p>{{event.country}}</p>
+                       <p>{{event.region}}</p>
+                   </div>
+                </div>
+            <div class='row'>
+                <div class='col'>
+                    <a class="btn btn-secondary btn-block" href="/event" role="button">Participate</a>
+                </div>
+            </div>
+           </div>
+       </div>
+   </div>
+{% endblock %}

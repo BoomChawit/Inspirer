@@ -1,0 +1,194 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <img src="./static/Picture2.jpg" class="img-fluid" alt="Responsive image">
+    <div class = "container">
+        <div class="centered">
+            <div class = "mid text-light">
+                <h1> Find an inspirer</h1>
+                <p>For university, career path, or business - no commission fee</p><br>
+            </div>
+
+            <form action="/speaker" method="post" class = "mx-auto" style="width: 600px;">
+                <div class="input-group mb-3">
+                    <input type="text" name = "topic" class="form-control" placeholder="Search for topic, inspirer, etc." aria-label="search">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class = "container-fluid bg-dark text-light">
+        <div class = "container">
+            <div class = "row mid lighter small align-middle" style = "height: 140px">
+                <div class = "col">
+                    <br>
+                    <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-globe" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M1.018 7.5h2.49c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5zM2.255 4H4.09a9.266 9.266 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.024 7.024 0 0 0 2.255 4zM8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm-.5 1.077c-.67.204-1.335.82-1.887 1.855-.173.324-.33.682-.468 1.068H7.5V1.077zM7.5 5H4.847a12.5 12.5 0 0 0-.338 2.5H7.5V5zm1 2.5V5h2.653c.187.765.306 1.608.338 2.5H8.5zm-1 1H4.51a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm1 2.5V8.5h2.99a12.495 12.495 0 0 1-.337 2.5H8.5zm-1 1H5.145c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12zm-2.173 2.472a6.695 6.695 0 0 1-.597-.933A9.267 9.267 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM1.674 11H3.82a13.651 13.651 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm8.999 3.472A7.024 7.024 0 0 0 13.745 12h-1.834a9.278 9.278 0 0 1-.641 1.539 6.688 6.688 0 0 1-.597.933zM10.855 12H8.5v2.923c.67-.204 1.335-.82 1.887-1.855A7.98 7.98 0 0 0 10.855 12zm1.325-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm.312-3.5h2.49a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.91 4a9.277 9.277 0 0 0-.64-1.539 6.692 6.692 0 0 0-.597-.933A7.024 7.024 0 0 1 13.745 4h-1.834zm-1.055 0H8.5V1.077c.67.204 1.335.82 1.887 1.855.173.324.33.682.468 1.068z"/>
+                    </svg><br><br>
+                    more than 1000 Inspirers <br>
+                    from around the world
+                </div>
+                <div class = "col">
+                    <br>
+                    <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-wallet2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 4l10-3A1.5 1.5 0 0 1 14 2.5v2h-1v-2a.5.5 0 0 0-.5-.5L5.833 4H2.5z"/>
+                        <path fill-rule="evenodd" d="M1 5.5A1.5 1.5 0 0 1 2.5 4h11A1.5 1.5 0 0 1 15 5.5v8a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5v-8zM2.5 5a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-11z"/>
+                        </svg><br><br>
+                    No commision fee <br>
+                    or transaction fee charged
+                </div>
+                <div class = "col">
+                    <br>
+                    <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-people-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                    </svg><br><br>
+                    Find career path <br>
+                    and build connection
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "container-fluid bg-light text-dark">
+        <div class = "container">
+            <br><br><br><br>
+            <h1 class = "mid">Featured inspirers</h1>
+            <br><br><br>
+            <div class="row row-cols-1 row-cols-2 row-cols-3 row-cols-4">
+                {% for x in featured_speaker %}
+                    <div class="col mb-4">
+                        <div class="card" style  = "height: 400px">
+                            <div class="card-body mid">
+                                <br><br>
+                                <a href = "profile/{{ x.firstname }}" style = "color: black;">
+                                    <div class="circular--landscape mid"><img src="{{ x.image }}" /></div><br><br>
+                                    <h5>{{ x.firstname }} {{ x.lastname }}</h5>
+                                    <div class = "small"> {{ x.field }}, {{ x.school }} </div>
+                                    <p class="card-text"> {{ x.topic }} </p>
+                                </a>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <br><br>
+            <div class = "mid"><a class="btn btn-warning btn-lg" href="/speaker" role="button" style="width: 150px;">Find more</a></div>
+        </div>
+        <br><br><br><br>
+    </div>
+
+    <div class = "container">
+        <br><br><br><br><h1 class = "mid">Popular topics</h1><br><br><br>
+        <div class = "row small">
+            <div class = "col">
+                <h5 style = "font-weight: bolder">TECHNOLOGY</h5>
+                <li>Artificial Intelligence</li>
+                <li>Big Data & Cryptocurrency</li>
+                <li>5G & Internet of Thing</li>
+                <li>Machine Learning</li>
+                <li>Cloud Computing</li>
+                <li>Robotics</li>
+            </div>
+            <div class = "col">
+                <h5 style = "font-weight: bolder">PERSONAL DEVELOPMENT</h5>
+                <li>Leadership</li>
+                <li>Public Speaking</li>
+                <li>Foreign Language Learning</li>
+                <li>Mental Tools</li>
+                <li>Studying trick</li>
+            </div>
+            <div class = "col">
+                <h5 style = "font-weight: bolder">CONSULTANTS</h5>
+                <li>Top University</li>
+                <li>Study Abroad</li>
+                <li>Standardized Test</li>
+                <li>Portfolio & CV</li>
+                <li>Personal Statement</li>
+            </div>
+            <div class = "col">
+                <h5 style = "font-weight: bolder">HEALTH & WELL-BEING</h5>
+                <li>Medical</li>
+                <li>Nutrition</li>
+                <li>Lifestyle</li>
+                <li>Exercise Schedule</li>
+                <li>Stress Management</li>
+                <li>Sport&Health Technology</li>
+            </div>
+            </div><br><br>
+        <div class = "row small">
+            <div class = "col">
+                <h5 style = "font-weight: bolder">ENGINEERING</h5>
+                <li>Transdisciplinary</li>
+                <li>Civil</li>
+                <li>Software</li>
+                <li>Chemical</li>
+                <li>Biological</li>
+            </div>
+            <div class = "col">
+                <h5 style = "font-weight: bolder">SCIENCE</h5>
+                <li>Research</li>
+                <li>Computer Science</li>
+                <li>Chemistry</li>
+                <li>Physics</li>
+                <li>Biology</li>
+            </div>
+            <div class = "col">
+                <h5 style = "font-weight: bolder">CAREER LEARNING</h5>
+                <li>Data Scientist</li>
+                <li>Designer</li>
+                <li>Project Management</li>
+                <li>Freelance</li>
+            </div>
+            <div class = "col">
+                <h5 style = "font-weight: bolder">BUSINESS</h5>
+                <li>Start-up</li>
+                <li>Risk Management</li>
+                <li>Best Selling</li>
+                <li>Technology for Business</li>
+            </div>
+        </div><br><br>
+
+        <div class = "row small">
+             <div class = "col">
+                <h5 style = "font-weight: bolder">MEDIA & MARKETING</h5>
+                <li>Social Media</li>
+                <li>Broadcasting</li>
+                <li>Corporate Communication</li>
+            </div>
+            <div class = "col">
+                <h5 style = "font-weight: bolder">POLITICS</h5>
+                <li>Public Affair</li>
+                <li>Political Issue for Business</li>
+                <li>Human Rights</li>
+            </div>
+            <div class = "col">
+                <h5 style = "font-weight: bolder">ART & CREATIVITY</h5>
+                <li>Product Design</li>
+                <li>Graphic Design</li>
+                <li>Art</li>
+                <li>Music</li>
+                <li>Photography</li>
+            </div>
+            <div class = "col">
+                <h5 style = "font-weight: bolder">BEAUTY & FASHION</h5>
+                <li>Fashion</li>
+                <li>Making up</li>
+                <li>Beauty Consultation</li>
+                <li>Confidence</li>
+                <li>Pro-posting action</li>
+            </div>
+        </div><br><br>
+    </div>
+
+{% endblock %}

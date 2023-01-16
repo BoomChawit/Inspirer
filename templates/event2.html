@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    event
+{% endblock %}
+
+{% block main%}
+    <br><br>
+    <div class = "mx-auto" style="width: 400px;">
+        <h1>Create your event</h1>
+    </div>
+    <br><br>
+
+    <div class = "container">
+        <div class = "mx-auto" style="width: 400px;">
+
+            <form action="/event/add" method="post">
+                <h6>Title of event</h6>
+                <div class="form-group">
+                    <input class="form-control " name="event" type="text" required>
+                    <h10>(without special character)</h10>
+                </div><br>
+
+                <h6>Event category</h6>
+                <select class="custom-select" id="inputGroupSelect01" name="category" required>
+                    <option selected>Choose...</option>
+                    <option>Technology</option>
+                    <option>Consultants</option>
+                    <option>Personal Development</option>
+                    <option>Health & Well-being</option>
+                    <option>Engineering</option>
+                    <option>Science</option>
+                    <option>Career Learning</option>
+                    <option>Business</option>
+                    <option>Media & Marketing</option>
+                    <option>Politics</option>
+                    <option>Art & Creativity</option>
+                    <option>Beauty & Fasion</option>
+                </select><br><br>
+
+                <h6>Date of event</h6>
+                <div class="row">
+                    <div class="col">
+                        <h8>Day</h8>
+                    </div>
+                    <div class="col">
+                        <h8>Month</h8>
+                    </div>
+                    <div class="col">
+                        <h8>Year</h8>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <select class="custom-select" id="inputGroupSelect01" name = "date" required>
+                            <option selected>Choose...</option>
+                            {% for i in range(1,32) %}
+                            <option> {{i}} </option>
+                            {% endfor %}
+                        </select><br><br>
+                    </div>
+                    <div class="col">
+                        <select class="custom-select" id="inputGroupSelect01" name = "month" required>
+                            <option selected>Choose...</option>
+                            <option> January </option>
+                            <option> February </option>
+                            <option> March </option>
+                            <option> April </option>
+                            <option> May </option>
+                            <option> June </option>
+                            <option> July </option>
+                            <option> August </option>
+                            <option> September </option>
+                            <option> October </option>
+                            <option> November </option>
+                            <option> December </option>
+                        </select><br><br>
+                    </div>
+                    <div class="col">
+                        <select class="custom-select" id="inputGroupSelect01" name = "year" required>
+                            <option selected>Choose...</option>
+                            <option> 2020 </option>
+                            <option> 2021 </option>
+                            <option> 2022 </option>
+                            <option> 2023 </option>
+                        </select><br><br>
+                    </div>
+                </div>
+
+                <h6>Event region</h6>
+                <select class="custom-select" id="inputGroupSelect01" name = "region" required>
+                    <option selected>Choose...</option>
+                    <option> Europe </option>
+                    <option> North America </option>
+                    <option> Asia </option>
+                    <option> Oceania </option>
+                    <option> South America </option>
+                    <option> Middle East </option>
+                    <option> Africa </option>
+                </select><br><br>
+                <h6>Country</h6>
+                <div class="form-group">
+                    <input class="form-control " name="country" type="country" required>
+                </div><br>
+                <h6>City</h6>
+                <div class="form-group">
+                    <input class="form-control " name="city" type="city" required>
+                </div><br>
+
+                <h6>Audience size</h6>
+                <select class="custom-select" id="inputGroupSelect01" name = "size" required>
+                    <option selected>Choose...</option>
+                    <option> 1-10</option>
+                    <option> 10-50 </option>
+                    <option> 50-100 </option>
+                    <option> 100-500 </option>
+                    <option> 500-1000</option>
+                    <option> 1000-5000 </option>
+                    <option> 5000+ </option>
+                </select><br><br>
+
+                <h6>Introduction of event</h6>
+                <div class="form-group">
+                    <textarea name="intro" style = "width: 400px; height: 200px;"> </textarea>
+                </div><br>
+                <button class="btn btn-success btn-lg btn-block" type="submit">Create</button>
+            </form>
+
+            <!-- <h6>Upload image for the event</h6>
+            <form action="/upload_event" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="image" id="image">
+                    <label class="custom-file-label" for="image">Select image...</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </form><br> -->
+            
+        </div>
+    </div>
+
+{% endblock %}

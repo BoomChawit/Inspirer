@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <br><br>
+    <div class = "mx-auto" style="width: 300px;">
+        <h1>Log in</h1>
+    </div>
+    <br><br>
+    
+    <div class = "container">
+        <div class = "mx-auto" style="width: 300px;">
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Email" type="email">
+                </div>
+                <div class="form-group">
+                    <input class="form-control " name="password" placeholder="Password" type="password">
+                </div>
+                <br>
+                <div class = "small">Your registered email and created password</div>
+                <br>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Log In</button>
+            </form>
+            <br><br>
+            Haven't registered? <a href="/register">Register now!</a>
+        </div>
+    </div>
+{% endblock %}

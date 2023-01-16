@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Speaker
+{% endblock %}
+
+{% block main %}
+    <style>
+        .sidenav {
+        height: 800px; /* Full-height: remove this if you want "auto" height*/
+        width: 250px; /* Set the width of the sidebar*/
+        /*position:fixed;*/
+        z-index: 1; /* Stay on top */
+        top: 1; /* Stay at the top */
+        left: 0;
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 20px;
+}
+    </style>
+    <div class = "row">
+        <div class = "col">
+            <div class='sidenav bg-light'>
+                <div class="container">
+                    <br>
+                    <form action="/speaker" method="post">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="topic" placeholder="Search for topic" aria-label="search">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                    <br>
+                    <div class="text-muted">
+                        <p class="text-dark font-weight-bold mt-auto">Topics</p>
+                        <input type="checkbox" id="technology" name="technology" value="technology">
+                        <label for="technology"> Technology</label><br>
+
+                        <input type="checkbox" id="consultants" name="consultants" value="consultants">
+                        <label for="consultants"> Consultants</label><br>
+
+                        <input type="checkbox" id="personal" name="personal" value="personal">
+                        <label for="personal"> Personal Development</label><br>
+
+                        <input type="checkbox" id="health" name="health" value="health">
+                        <label for="health"> Health & Well-being</label><br>
+
+                        <input type="checkbox" id="engineering" name="engineering" value="engineering">
+                        <label for="engineering"> Engineering</label><br>
+
+                        <input type="checkbox" id="science" name="science" value="science">
+                        <label for="science"> Science</label><br>
+
+                        <input type="checkbox" id="career" name="career" value="career">
+                        <label for="career"> Career Learning</label><br>
+
+                        <input type="checkbox" id="business" name="business" value="business">
+                        <label for="business"> business</label><br>
+
+                        <input type="checkbox" id="politics" name="politics" value="politics">
+                        <label for="politics"> Politics</label><br>
+
+                        <input type="checkbox" id="media" name="media" value="media">
+                        <label for="media"> Media & Marketing</label><br>
+
+                        <input type="checkbox" id="art" name="art" value="art">
+                        <label for="art"> Art & Creativity</label><br>
+
+                        <input type="checkbox" id="beauty" name="beauty" value="beauty">
+                        <label for="beauty"> Beauty & Fashion</label><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-10">
+            <br><br><br>
+            <div class = "container-fluid text-dark">
+                <div class="row row-cols-1 row-cols-md-3 container">
+                    {% for row in rows %}
+                        <div class="col mb-4">
+                            <div class="card">
+                                <div class="card-body mid">
+                                    <a href = "/profile/{{ row.firstname }}" style = "color:black">
+                                        <div class="circular--landscape mid"><img src= {{ row["image"] }} /></div><br><br>
+                                        <h5>{{row["firstname"]}} {{row["lastname"]}}</h5>
+                                        <h5>{{row["position"]}} {{row["company"]}}</h5>
+                                        <div class = "small">{{row["field"]}}, {{row["school"]}}</div>
+                                        <p class="card-text">{{row["topic"]}}</p>
+                                        <br>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
